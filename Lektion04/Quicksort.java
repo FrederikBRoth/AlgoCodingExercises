@@ -2,6 +2,8 @@ package Lektion04;
 
 import java.util.ArrayList;
 
+import Common.ArrayFiller;
+
 class QuickSorter{
 
     
@@ -30,38 +32,19 @@ class QuickSorter{
         A.set(r, temp);
         return i + 1;
     }
-
-    void FillArrayRandom(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            int randomInt = (int) (Math.random() * 20);
-            a.add(randomInt);
-        }
-    }
-
-    void FillArraySorted(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            a.add(i);
-        }
-    }
-
-    void FillArrayReverseSorted(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            a.add(size - i);
-        }
-
-    }
-
 }
 
 class Main{
     public static void main(String[] args) {
         QuickSorter sorter = new QuickSorter();
         ArrayList<Integer> a = new ArrayList<>();
-        sorter.FillArrayRandom(a, 8);
+        ArrayFiller.FillArrayRandom(a, 20000);
         System.out.println(a);
-
+        long startTime = System.currentTimeMillis();
         sorter.Quicksort(a, 0, a.size() - 1);
         System.out.println(a);
-
+        long endTime = System.currentTimeMillis();
+        long timeElapsed = endTime - startTime;
+        System.out.println(timeElapsed + " millisec");
     }
 }

@@ -1,7 +1,8 @@
 package Lektion03;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
-
+import Common.ArrayFiller;
 class Mergesorter {
 
     ArrayList<Integer> array = new ArrayList<Integer>();
@@ -52,33 +53,13 @@ class Mergesorter {
             Merge(A, p, q, r);
         }
     }
-
-    void FillArrayRandom(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            int randomInt = (int) (Math.random() * 20);
-            a.add(randomInt);
-        }
-    }
-
-    void FillArraySorted(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            a.add(i);
-        }
-    }
-
-    void FillArrayReverseSorted(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            a.add(size - i);
-        }
-
-    }
 }
 
 class Runner {
     public static void main(String[] args) {
         Mergesorter sorter = new Mergesorter();
         ArrayList<Integer> a = new ArrayList<>();
-        sorter.FillArrayRandom(a, 8);
+        ArrayFiller.FillArrayRandom(a, 8);
         System.out.println(a);
 
         sorter.MergeSort(a, 0, a.size() - 1);

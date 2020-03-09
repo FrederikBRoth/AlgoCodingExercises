@@ -1,6 +1,8 @@
 package Lektion02;
 
+
 import java.util.ArrayList;
+import Common.ArrayFiller;
 
 class SortClass {
 
@@ -25,25 +27,8 @@ class SortClass {
         System.out.println(timeElapsed + " millisec");
     }
 
-    void FillArrayRandom(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            int randomInt = (int) (Math.random() * 20);
-            a.add(randomInt);
-        }
-    }
-
-    void FillArraySorted(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            a.add(i);
-        }
-    }
-
-    void FillArrayReverseSorted(ArrayList<Integer> a, int size) {
-        for (int i = 0; i < size; i++) {
-            a.add(size - i);
-        }
-
-    }
+    
+    
 }
 
 class Opgave1 {
@@ -56,7 +41,7 @@ class Opgave1 {
         // sorter.FillArrayReverseSorted(a1, 2800);
         // sorter.InsertionSort(a1);
         ArrayList<Integer> a2 = new ArrayList<Integer>();
-        sorter.FillArrayRandom(a2, 20000);
+        ArrayFiller.FillArrayRandom(a2, 20000);
         sorter.InsertionSort(a2);
 
     }
