@@ -1,6 +1,5 @@
 package Lektion03;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import Common.ArrayFiller;
 class Mergesorter {
